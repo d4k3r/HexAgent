@@ -1,4 +1,4 @@
-# HexAgent — reconstructed Hex policy/value agent
+# HexAgent - reconstructed Hex policy/value agent
 
 This repository is my independent post-coursework reconstruction and experimental extension of work that began in a University of Manchester AI & Games group project. It is **not** a fork or wholesale republication of the original coursework repository. The original project included university-provided infrastructure and multiple student groups; this public repository contains only a conservative subset of my later reconstruction tooling and results.
 
