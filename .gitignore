@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+
+# Local experiment outputs and heavyweight artifacts
+artifacts/
+checkpoints/
+datasets/
+*.pt
+*.onnx
+*.bin
+*.bin.gz
+*.engine
+*.log
+
+# OS/editor files
+.DS_Store
+.vscode/

@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "scope": "Exact train-versus-validation overlap audit for Phase-A Student inputs.",
+  "identity": {
+    "physical_position": "black-stone plane + white-stone plane + side to move",
+    "exact_student_input": "all six persisted feature planes + side to move"
+  },
+  "canonical": {
+    "train_rows": 81809,
+    "validation_rows": 20082,
+    "validation_unique_exact_inputs": 17766,
+    "overlapping_validation_unique_exact_inputs": 713,
+    "exact_input_overlap_percent": 4.0132838005
+  },
+  "expanded": {
+    "train_rows": 198587,
+    "validation_rows": 20082,
+    "validation_unique_exact_inputs": 17766,
+    "overlapping_validation_unique_exact_inputs": 952,
+    "exact_input_overlap_percent": 5.3585500394
+  },
+  "note": "Validation assignment is game/trajectory held out; it is not strictly position-disjoint."
+}

@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "scope": "Deterministic sample of Student-generated raw-policy disagreement states, queried with completed 100-visit KataHex root searches.",
+  "sample": {
+    "unique_queries": 184,
+    "teacher_terminal": 19,
+    "searchable": 165,
+    "teacher_terminal_percent": 10.3260869565
+  },
+  "teacher_preference_on_native_regime_disagreements": {
+    "expanded": 81,
+    "canonical": 53,
+    "tie": 31
+  },
+  "searchable_state_student_metrics": {
+    "best_validation_policy_canonical": {
+      "mean_ce": 3.2341980602,
+      "mean_kl": 1.7300753888,
+      "teacher_top1_agreement": 0.2545454545
+    },
+    "best_validation_policy_expanded": {
+      "mean_ce": 3.0268730181,
+      "mean_kl": 1.5227503468,
+      "teacher_top1_agreement": 0.3636363636
+    },
+    "final_epoch_24_canonical": {
+      "mean_ce": 3.3944670371,
+      "mean_kl": 1.8903443657,
+      "teacher_top1_agreement": 0.2484848485
+    },
+    "final_epoch_24_expanded": {
+      "mean_ce": 3.3987819907,
+      "mean_kl": 1.8946593193,
+      "teacher_top1_agreement": 0.3393939394
+    }
+  },
+  "interpretation": "Exploratory diagnostic only: no causal or statistical-significance claim. Teacher-terminal rows have no fabricated policy distribution."
+}

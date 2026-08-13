@@ -1,0 +1,24 @@
+{
+  "export_version": 1,
+  "source_workspace": "private local reconstruction workspace; not published as a repository",
+  "selection_basis": "Independent post-coursework reconstruction files and compact derived results only.",
+  "source_files": {
+    "src/hex_reconstruction/__init__.py": "8843f218a60197a93a34922b8191df839882d53052e8b533a496f5de23210a82",
+    "src/hex_reconstruction/board.py": "71b177a05673a45500c3c21c331dcf01ac804ed6f304ecd9afc081b66afd10ad",
+    "src/hex_reconstruction/schema.py": "474c665a2117a3112b236dab66148e8de4f839c0de45af48d524009120e3ff07",
+    "src/hex_reconstruction/validation.py": "5e666360d0d935e2155943fd75d7463d899b837ae8041edfbd82ca60126de995",
+    "src/hex_reconstruction/soft_policy.py": "1232ba3d5619d8be1add732470c02aa6ce46403e853226676246e9c4fef0fa0a",
+    "src/hex_reconstruction/student_training.py": "47caceb8cf84f865a02a8c77a995c66db66684fbe4442a62a312bfa5e734d800",
+    "src/hex_reconstruction/gtp.py": "b1019250a397ba9ff57ec1847fc674d5349960501aafa694d319ac8b359a60dd",
+    "src/hex_reconstruction/manifest.py": "a5cf2dbdbd0e38d11b52fb0e70c0eb70b0150e31e2c8a564f1d7fac0ebbbc6f3",
+    "results/paired-scaling-analysis-v1.json": "65c0c338c61a5e37838b5705f3c4639c38dc32475940fb6c69ad93a83cc39bad",
+    "results/paired-scaling-per-seed-v1.csv": "c91f7c62a7d4138c67951c2e8ffb7b92c384b94491ac18e68bdd30172016918f",
+    "results/student-input-overlap-summary-v1.json": "derived from private overlap audit SHA-256 2ab84c40123f18ca4f20d0431dfb919171eba71bb77124ec51e97e9bcaacfb7e; local absolute paths removed"
+  },
+  "excluded": [
+    "University framework and historical HexAgent repository",
+    "KataHex source, engine binary, and model weights",
+    "Student checkpoints, teacher corpora, raw GTP logs, WSL builds/toolchains",
+    "Historical MoHex/Neurobenzene work and other third-party material"
+  ]
+}

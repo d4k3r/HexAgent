@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hex-agent-reconstruction"
+version = "0.1.0"
+description = "Independent reconstruction tooling for an 11x11 Hex policy/value agent"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.26", "torch>=2.0"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

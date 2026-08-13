@@ -1,0 +1,966 @@
+{
+  "schema_version": 2,
+  "experiment": "five-seed paired teacher-data scaling",
+  "seeds": [
+    4901,
+    4902,
+    4903,
+    4904,
+    4905
+  ],
+  "dataset_contract": {
+    "canonical_train_games": 1536,
+    "canonical_train_rows": 81809,
+    "expanded_train_games": 3736,
+    "expanded_train_rows": 198587,
+    "same_validation_games": 384,
+    "same_validation_rows": 20082,
+    "batch_size": 256
+  },
+  "compute_budget": {
+    "canonical_steps_per_epoch": 320,
+    "expanded_steps_per_epoch": 776,
+    "canonical_epoch_24_steps": 7680,
+    "nearest_expanded_epoch_for_step_match": 10,
+    "expanded_step_matched_steps": 7760,
+    "best_checkpoint_note": "Best-validation metrics are selected independently within training runs capped at 24 epochs. They are not necessarily epoch-24 metrics.",
+    "equal_epoch_note": "Exact epoch 24 vs epoch 24 is equal passes, not equal optimizer steps."
+  },
+  "runs": [
+    {
+      "seed": 4901,
+      "kind": "canonical",
+      "run": "reconstruction/artifacts/student-training-scaled-canonical-v1/first-scaled-10x256-24epochs",
+      "best": {
+        "policy": 1.7335287424900916,
+        "kl": 0.5375558431257041,
+        "top1": 0.556767254257544,
+        "top3": 0.8793944826212529,
+        "epoch": 14,
+        "train_policy": 1.3831975070522888,
+        "wall_seconds": 342.1486353370128
+      },
+      "final": {
+        "policy": 1.762622993206814,
+        "kl": 0.5666500790970886,
+        "top1": 0.5650831590479036,
+        "top3": 0.8818344786375859,
+        "epoch": 24,
+        "train_policy": 1.2959205105478733,
+        "wall_seconds": 587.8831236789993
+      },
+      "step_matched": {
+        "policy": 1.762622993206814,
+        "kl": 0.5666500790970886,
+        "top1": 0.5650831590479036,
+        "top3": 0.8818344786375859,
+        "epoch": 24,
+        "train_policy": 1.2959205105478733,
+        "wall_seconds": 587.8831236789993
+      },
+      "best_policy_epoch": 14,
+      "training_wall_seconds": 588.0198911050102
+    },
+    {
+      "seed": 4901,
+      "kind": "expanded",
+      "run": "reconstruction/artifacts/student-training-paired-scaling-v1/expanded-seed4901",
+      "best": {
+        "policy": 1.5811628134598972,
+        "kl": 0.3851899222161307,
+        "top1": 0.5717060053779504,
+        "top3": 0.9082760681207052,
+        "epoch": 10,
+        "train_policy": 1.375990886230261,
+        "wall_seconds": 531.2731413549918
+      },
+      "final": {
+        "policy": 1.6166297534751342,
+        "kl": 0.4206568705894334,
+        "top1": 0.6089034956677621,
+        "top3": 0.9217707399661388,
+        "epoch": 24,
+        "train_policy": 1.2587485023950902,
+        "wall_seconds": 1258.5914942169911
+      },
+      "step_matched": {
+        "policy": 1.5811628134598972,
+        "kl": 0.3851899222161307,
+        "top1": 0.5717060053779504,
+        "top3": 0.9082760681207052,
+        "epoch": 10,
+        "train_policy": 1.375990886230261,
+        "wall_seconds": 531.2731413549918
+      },
+      "best_policy_epoch": 10,
+      "training_wall_seconds": 1258.7527711089933
+    },
+    {
+      "seed": 4902,
+      "kind": "canonical",
+      "run": "reconstruction/artifacts/student-training-paired-scaling-v1/canonical-seed4902",
+      "best": {
+        "policy": 1.7424390479609164,
+        "kl": 0.5464661646359423,
+        "top1": 0.5743949805796236,
+        "top3": 0.8858181456030276,
+        "epoch": 24,
+        "train_policy": 1.2902860940810523,
+        "wall_seconds": 545.5694126029994
+      },
+      "final": {
+        "policy": 1.7424390479609164,
+        "kl": 0.5464661646359423,
+        "top1": 0.5743949805796236,
+        "top3": 0.8858181456030276,
+        "epoch": 24,
+        "train_policy": 1.2902860940810523,
+        "wall_seconds": 545.5694126029994
+      },
+      "step_matched": {
+        "policy": 1.7424390479609164,
+        "kl": 0.5464661646359423,
+        "top1": 0.5743949805796236,
+        "top3": 0.8858181456030276,
+        "epoch": 24,
+        "train_policy": 1.2902860940810523,
+        "wall_seconds": 545.5694126029994
+      },
+      "best_policy_epoch": 24,
+      "training_wall_seconds": 545.9823626849975
+    },
+    {
+      "seed": 4902,
+      "kind": "expanded",
+      "run": "reconstruction/artifacts/student-training-paired-scaling-v1/expanded-seed4902",
+      "best": {
+        "policy": 1.5958735005051334,
+        "kl": 0.39990060983123493,
+        "top1": 0.566228463300468,
+        "top3": 0.9083756597948411,
+        "epoch": 11,
+        "train_policy": 1.3635339391268935,
+        "wall_seconds": 573.0498128339968
+      },
+      "final": {
+        "policy": 1.6292766839690256,
+        "kl": 0.43330378703844996,
+        "top1": 0.6278259137536102,
+        "top3": 0.9173887063041529,
+        "epoch": 24,
+        "train_policy": 1.2567214980815493,
+        "wall_seconds": 1249.7361503010034
+      },
+      "step_matched": {
+        "policy": 1.613715643296737,
+        "kl": 0.41774274637803366,
+        "top1": 0.5947116821033761,
+        "top3": 0.9115127975301265,
+        "epoch": 10,
+        "train_policy": 1.3847395502941748,
+        "wall_seconds": 521.4588430480071
+      },
+      "best_policy_epoch": 11,
+      "training_wall_seconds": 1249.9069134400052
+    },
+    {
+      "seed": 4903,
+      "kind": "canonical",
+      "run": "reconstruction/artifacts/student-training-paired-scaling-v1/canonical-seed4903",
+      "best": {
+        "policy": 1.7203185838622979,
+        "kl": 0.524345704538273,
+        "top1": 0.5332138233243701,
+        "top3": 0.8810875410815656,
+        "epoch": 15,
+        "train_policy": 1.3639867791166738,
+        "wall_seconds": 341.04255971999373
+      },
+      "final": {
+        "policy": 1.7781477992651697,
+        "kl": 0.582174903877987,
+        "top1": 0.5679713175978488,
+        "top3": 0.8878597749228164,
+        "epoch": 24,
+        "train_policy": 1.2988022829588712,
+        "wall_seconds": 544.465401754991
+      },
+      "step_matched": {
+        "policy": 1.7781477992651697,
+        "kl": 0.582174903877987,
+        "top1": 0.5679713175978488,
+        "top3": 0.8878597749228164,
+        "epoch": 24,
+        "train_policy": 1.2988022829588712,
+        "wall_seconds": 544.465401754991
+      },
+      "best_policy_epoch": 15,
+      "training_wall_seconds": 544.6137595379987
+    },
+    {
+      "seed": 4903,
+      "kind": "expanded",
+      "run": "reconstruction/artifacts/student-training-paired-scaling-v1/expanded-seed4903",
+      "best": {
+        "policy": 1.59999846709272,
+        "kl": 0.40402557958871316,
+        "top1": 0.5773329349666367,
+        "top3": 0.9097201473956777,
+        "epoch": 11,
+        "train_policy": 1.3664102192900205,
+        "wall_seconds": 572.4799470989965
+      },
+      "final": {
+        "policy": 1.6502470593091063,
+        "kl": 0.4542741668187531,
+        "top1": 0.6066128871626332,
+        "top3": 0.9163927895627926,
+        "epoch": 24,
+        "train_policy": 1.2603823597314114,
+        "wall_seconds": 1250.920243746994
+      },
+      "step_matched": {
+        "policy": 1.6550457576109279,
+        "kl": 0.45907287001194275,
+        "top1": 0.5774325266407728,
+        "top3": 0.9056368887561,
+        "epoch": 10,
+        "train_policy": 1.3863704669181836,
+        "wall_seconds": 520.920012587987
+      },
+      "best_policy_epoch": 11,
+      "training_wall_seconds": 1251.0862325069902
+    },
+    {
+      "seed": 4904,
+      "kind": "canonical",
+      "run": "reconstruction/artifacts/student-training-paired-scaling-v1/canonical-seed4904",
+      "best": {
+        "policy": 1.730774132014152,
+        "kl": 0.5348012445695063,
+        "top1": 0.5525844039438303,
+        "top3": 0.8809879494074295,
+        "epoch": 12,
+        "train_policy": 1.4203354893485058,
+        "wall_seconds": 274.4503810299939
+      },
+      "final": {
+        "policy": 1.7659512219373454,
+        "kl": 0.5699783441448412,
+        "top1": 0.5725525346081067,
+        "top3": 0.8840254954685788,
+        "epoch": 24,
+        "train_policy": 1.2935304716388816,
+        "wall_seconds": 547.4997292679909
+      },
+      "step_matched": {
+        "policy": 1.7659512219373454,
+        "kl": 0.5699783441448412,
+        "top1": 0.5725525346081067,
+        "top3": 0.8840254954685788,
+        "epoch": 24,
+        "train_policy": 1.2935304716388816,
+        "wall_seconds": 547.4997292679909
+      },
+      "best_policy_epoch": 12,
+      "training_wall_seconds": 547.6709715669858
+    },
+    {
+      "seed": 4904,
+      "kind": "expanded",
+      "run": "reconstruction/artifacts/student-training-paired-scaling-v1/expanded-seed4904",
+      "best": {
+        "policy": 1.595702675231578,
+        "kl": 0.39972977837223583,
+        "top1": 0.5991435116024301,
+        "top3": 0.9088736181655214,
+        "epoch": 15,
+        "train_policy": 1.3124633827645378,
+        "wall_seconds": 785.3975818409963
+      },
+      "final": {
+        "policy": 1.653590810368966,
+        "kl": 0.45761792601110596,
+        "top1": 0.6188128672442984,
+        "top3": 0.9162931978886565,
+        "epoch": 24,
+        "train_policy": 1.2587410878890695,
+        "wall_seconds": 1251.4094198509993
+      },
+      "step_matched": {
+        "policy": 1.6128943447406139,
+        "kl": 0.4169214446401468,
+        "top1": 0.5934169903396076,
+        "top3": 0.9095707598844737,
+        "epoch": 10,
+        "train_policy": 1.3829996969921883,
+        "wall_seconds": 523.1000393770082
+      },
+      "best_policy_epoch": 15,
+      "training_wall_seconds": 1251.5600897730037
+    },
+    {
+      "seed": 4905,
+      "kind": "canonical",
+      "run": "reconstruction/artifacts/student-training-paired-scaling-v1/canonical-seed4905",
+      "best": {
+        "policy": 1.7269422395238125,
+        "kl": 0.5309693469740981,
+        "top1": 0.5580121501842445,
+        "top3": 0.8832785579125585,
+        "epoch": 13,
+        "train_policy": 1.39892546643221,
+        "wall_seconds": 295.3641757689911
+      },
+      "final": {
+        "policy": 1.7963659920287363,
+        "kl": 0.6003930998233171,
+        "top1": 0.5638382631212031,
+        "top3": 0.8834777412608306,
+        "epoch": 24,
+        "train_policy": 1.2910250806926793,
+        "wall_seconds": 543.4799233859958
+      },
+      "step_matched": {
+        "policy": 1.7963659920287363,
+        "kl": 0.6003930998233171,
+        "top1": 0.5638382631212031,
+        "top3": 0.8834777412608306,
+        "epoch": 24,
+        "train_policy": 1.2910250806926793,
+        "wall_seconds": 543.4799233859958
+      },
+      "best_policy_epoch": 13,
+      "training_wall_seconds": 543.6293333789945
+    },
+    {
+      "seed": 4905,
+      "kind": "expanded",
+      "run": "reconstruction/artifacts/student-training-paired-scaling-v1/expanded-seed4905",
+      "best": {
+        "policy": 1.5819779573214885,
+        "kl": 0.386005060450274,
+        "top1": 0.6056667662583408,
+        "top3": 0.9105666766258341,
+        "epoch": 10,
+        "train_policy": 1.3793359837078731,
+        "wall_seconds": 521.0690105469985
+      },
+      "final": {
+        "policy": 1.6339153245962565,
+        "kl": 0.4379424262410105,
+        "top1": 0.6352952893138134,
+        "top3": 0.919828702320486,
+        "epoch": 24,
+        "train_policy": 1.25837148667556,
+        "wall_seconds": 1280.976302793002
+      },
+      "step_matched": {
+        "policy": 1.5819779573214885,
+        "kl": 0.386005060450274,
+        "top1": 0.6056667662583408,
+        "top3": 0.9105666766258341,
+        "epoch": 10,
+        "train_policy": 1.3793359837078731,
+        "wall_seconds": 521.0690105469985
+      },
+      "best_policy_epoch": 10,
+      "training_wall_seconds": 1281.1736307210085
+    }
+  ],
+  "paired_best_within_24_epoch_cap": [
+    {
+      "seed": 4901,
+      "canonical_ce": 1.7335287424900916,
+      "expanded_ce": 1.5811628134598972,
+      "ce_delta": -0.1523659290301944,
+      "canonical_kl": 0.5375558431257041,
+      "expanded_kl": 0.3851899222161307,
+      "kl_delta": -0.15236592090957346,
+      "canonical_top1": 0.556767254257544,
+      "expanded_top1": 0.5717060053779504,
+      "top1_delta": 0.014938751120406324,
+      "canonical_top3": 0.8793944826212529,
+      "expanded_top3": 0.9082760681207052,
+      "top3_delta": 0.0288815854994523,
+      "canonical_best_epoch": 14,
+      "expanded_best_epoch": 10,
+      "canonical_final": {
+        "policy": 1.762622993206814,
+        "kl": 0.5666500790970886,
+        "top1": 0.5650831590479036,
+        "top3": 0.8818344786375859,
+        "epoch": 24,
+        "train_policy": 1.2959205105478733,
+        "wall_seconds": 587.8831236789993
+      },
+      "expanded_final": {
+        "policy": 1.6166297534751342,
+        "kl": 0.4206568705894334,
+        "top1": 0.6089034956677621,
+        "top3": 0.9217707399661388,
+        "epoch": 24,
+        "train_policy": 1.2587485023950902,
+        "wall_seconds": 1258.5914942169911
+      },
+      "canonical_final_policy": 1.762622993206814,
+      "canonical_final_kl": 0.5666500790970886,
+      "canonical_final_top1": 0.5650831590479036,
+      "canonical_final_top3": 0.8818344786375859,
+      "expanded_final_policy": 1.6166297534751342,
+      "expanded_final_kl": 0.4206568705894334,
+      "expanded_final_top1": 0.6089034956677621,
+      "expanded_final_top3": 0.9217707399661388,
+      "canonical_training_wall_seconds": 588.0198911050102,
+      "expanded_training_wall_seconds": 1258.7527711089933,
+      "canonical_step_matched": {
+        "policy": 1.762622993206814,
+        "kl": 0.5666500790970886,
+        "top1": 0.5650831590479036,
+        "top3": 0.8818344786375859,
+        "epoch": 24,
+        "train_policy": 1.2959205105478733,
+        "wall_seconds": 587.8831236789993
+      },
+      "expanded_step_matched": {
+        "policy": 1.5811628134598972,
+        "kl": 0.3851899222161307,
+        "top1": 0.5717060053779504,
+        "top3": 0.9082760681207052,
+        "epoch": 10,
+        "train_policy": 1.375990886230261,
+        "wall_seconds": 531.2731413549918
+      }
+    },
+    {
+      "seed": 4902,
+      "canonical_ce": 1.7424390479609164,
+      "expanded_ce": 1.5958735005051334,
+      "ce_delta": -0.14656554745578299,
+      "canonical_kl": 0.5464661646359423,
+      "expanded_kl": 0.39990060983123493,
+      "kl_delta": -0.1465655548047074,
+      "canonical_top1": 0.5743949805796236,
+      "expanded_top1": 0.566228463300468,
+      "top1_delta": -0.008166517279155516,
+      "canonical_top3": 0.8858181456030276,
+      "expanded_top3": 0.9083756597948411,
+      "top3_delta": 0.02255751419181351,
+      "canonical_best_epoch": 24,
+      "expanded_best_epoch": 11,
+      "canonical_final": {
+        "policy": 1.7424390479609164,
+        "kl": 0.5464661646359423,
+        "top1": 0.5743949805796236,
+        "top3": 0.8858181456030276,
+        "epoch": 24,
+        "train_policy": 1.2902860940810523,
+        "wall_seconds": 545.5694126029994
+      },
+      "expanded_final": {
+        "policy": 1.6292766839690256,
+        "kl": 0.43330378703844996,
+        "top1": 0.6278259137536102,
+        "top3": 0.9173887063041529,
+        "epoch": 24,
+        "train_policy": 1.2567214980815493,
+        "wall_seconds": 1249.7361503010034
+      },
+      "canonical_final_policy": 1.7424390479609164,
+      "canonical_final_kl": 0.5464661646359423,
+      "canonical_final_top1": 0.5743949805796236,
+      "canonical_final_top3": 0.8858181456030276,
+      "expanded_final_policy": 1.6292766839690256,
+      "expanded_final_kl": 0.43330378703844996,
+      "expanded_final_top1": 0.6278259137536102,
+      "expanded_final_top3": 0.9173887063041529,
+      "canonical_training_wall_seconds": 545.9823626849975,
+      "expanded_training_wall_seconds": 1249.9069134400052,
+      "canonical_step_matched": {
+        "policy": 1.7424390479609164,
+        "kl": 0.5464661646359423,
+        "top1": 0.5743949805796236,
+        "top3": 0.8858181456030276,
+        "epoch": 24,
+        "train_policy": 1.2902860940810523,
+        "wall_seconds": 545.5694126029994
+      },
+      "expanded_step_matched": {
+        "policy": 1.613715643296737,
+        "kl": 0.41774274637803366,
+        "top1": 0.5947116821033761,
+        "top3": 0.9115127975301265,
+        "epoch": 10,
+        "train_policy": 1.3847395502941748,
+        "wall_seconds": 521.4588430480071
+      }
+    },
+    {
+      "seed": 4903,
+      "canonical_ce": 1.7203185838622979,
+      "expanded_ce": 1.59999846709272,
+      "ce_delta": -0.12032011676957777,
+      "canonical_kl": 0.524345704538273,
+      "expanded_kl": 0.40402557958871316,
+      "kl_delta": -0.12032012494955985,
+      "canonical_top1": 0.5332138233243701,
+      "expanded_top1": 0.5773329349666367,
+      "top1_delta": 0.04411911164226667,
+      "canonical_top3": 0.8810875410815656,
+      "expanded_top3": 0.9097201473956777,
+      "top3_delta": 0.02863260631411213,
+      "canonical_best_epoch": 15,
+      "expanded_best_epoch": 11,
+      "canonical_final": {
+        "policy": 1.7781477992651697,
+        "kl": 0.582174903877987,
+        "top1": 0.5679713175978488,
+        "top3": 0.8878597749228164,
+        "epoch": 24,
+        "train_policy": 1.2988022829588712,
+        "wall_seconds": 544.465401754991
+      },
+      "expanded_final": {
+        "policy": 1.6502470593091063,
+        "kl": 0.4542741668187531,
+        "top1": 0.6066128871626332,
+        "top3": 0.9163927895627926,
+        "epoch": 24,
+        "train_policy": 1.2603823597314114,
+        "wall_seconds": 1250.920243746994
+      },
+      "canonical_final_policy": 1.7781477992651697,
+      "canonical_final_kl": 0.582174903877987,
+      "canonical_final_top1": 0.5679713175978488,
+      "canonical_final_top3": 0.8878597749228164,
+      "expanded_final_policy": 1.6502470593091063,
+      "expanded_final_kl": 0.4542741668187531,
+      "expanded_final_top1": 0.6066128871626332,
+      "expanded_final_top3": 0.9163927895627926,
+      "canonical_training_wall_seconds": 544.6137595379987,
+      "expanded_training_wall_seconds": 1251.0862325069902,
+      "canonical_step_matched": {
+        "policy": 1.7781477992651697,
+        "kl": 0.582174903877987,
+        "top1": 0.5679713175978488,
+        "top3": 0.8878597749228164,
+        "epoch": 24,
+        "train_policy": 1.2988022829588712,
+        "wall_seconds": 544.465401754991
+      },
+      "expanded_step_matched": {
+        "policy": 1.6550457576109279,
+        "kl": 0.45907287001194275,
+        "top1": 0.5774325266407728,
+        "top3": 0.9056368887561,
+        "epoch": 10,
+        "train_policy": 1.3863704669181836,
+        "wall_seconds": 520.920012587987
+      }
+    },
+    {
+      "seed": 4904,
+      "canonical_ce": 1.730774132014152,
+      "expanded_ce": 1.595702675231578,
+      "ce_delta": -0.13507145678257415,
+      "canonical_kl": 0.5348012445695063,
+      "expanded_kl": 0.39972977837223583,
+      "kl_delta": -0.13507146619727045,
+      "canonical_top1": 0.5525844039438303,
+      "expanded_top1": 0.5991435116024301,
+      "top1_delta": 0.04655910765859972,
+      "canonical_top3": 0.8809879494074295,
+      "expanded_top3": 0.9088736181655214,
+      "top3_delta": 0.02788566875809184,
+      "canonical_best_epoch": 12,
+      "expanded_best_epoch": 15,
+      "canonical_final": {
+        "policy": 1.7659512219373454,
+        "kl": 0.5699783441448412,
+        "top1": 0.5725525346081067,
+        "top3": 0.8840254954685788,
+        "epoch": 24,
+        "train_policy": 1.2935304716388816,
+        "wall_seconds": 547.4997292679909
+      },
+      "expanded_final": {
+        "policy": 1.653590810368966,
+        "kl": 0.45761792601110596,
+        "top1": 0.6188128672442984,
+        "top3": 0.9162931978886565,
+        "epoch": 24,
+        "train_policy": 1.2587410878890695,
+        "wall_seconds": 1251.4094198509993
+      },
+      "canonical_final_policy": 1.7659512219373454,
+      "canonical_final_kl": 0.5699783441448412,
+      "canonical_final_top1": 0.5725525346081067,
+      "canonical_final_top3": 0.8840254954685788,
+      "expanded_final_policy": 1.653590810368966,
+      "expanded_final_kl": 0.45761792601110596,
+      "expanded_final_top1": 0.6188128672442984,
+      "expanded_final_top3": 0.9162931978886565,
+      "canonical_training_wall_seconds": 547.6709715669858,
+      "expanded_training_wall_seconds": 1251.5600897730037,
+      "canonical_step_matched": {
+        "policy": 1.7659512219373454,
+        "kl": 0.5699783441448412,
+        "top1": 0.5725525346081067,
+        "top3": 0.8840254954685788,
+        "epoch": 24,
+        "train_policy": 1.2935304716388816,
+        "wall_seconds": 547.4997292679909
+      },
+      "expanded_step_matched": {
+        "policy": 1.6128943447406139,
+        "kl": 0.4169214446401468,
+        "top1": 0.5934169903396076,
+        "top3": 0.9095707598844737,
+        "epoch": 10,
+        "train_policy": 1.3829996969921883,
+        "wall_seconds": 523.1000393770082
+      }
+    },
+    {
+      "seed": 4905,
+      "canonical_ce": 1.7269422395238125,
+      "expanded_ce": 1.5819779573214885,
+      "ce_delta": -0.14496428220232405,
+      "canonical_kl": 0.5309693469740981,
+      "expanded_kl": 0.386005060450274,
+      "kl_delta": -0.14496428652382415,
+      "canonical_top1": 0.5580121501842445,
+      "expanded_top1": 0.6056667662583408,
+      "top1_delta": 0.04765461607409627,
+      "canonical_top3": 0.8832785579125585,
+      "expanded_top3": 0.9105666766258341,
+      "top3_delta": 0.027288118713275633,
+      "canonical_best_epoch": 13,
+      "expanded_best_epoch": 10,
+      "canonical_final": {
+        "policy": 1.7963659920287363,
+        "kl": 0.6003930998233171,
+        "top1": 0.5638382631212031,
+        "top3": 0.8834777412608306,
+        "epoch": 24,
+        "train_policy": 1.2910250806926793,
+        "wall_seconds": 543.4799233859958
+      },
+      "expanded_final": {
+        "policy": 1.6339153245962565,
+        "kl": 0.4379424262410105,
+        "top1": 0.6352952893138134,
+        "top3": 0.919828702320486,
+        "epoch": 24,
+        "train_policy": 1.25837148667556,
+        "wall_seconds": 1280.976302793002
+      },
+      "canonical_final_policy": 1.7963659920287363,
+      "canonical_final_kl": 0.6003930998233171,
+      "canonical_final_top1": 0.5638382631212031,
+      "canonical_final_top3": 0.8834777412608306,
+      "expanded_final_policy": 1.6339153245962565,
+      "expanded_final_kl": 0.4379424262410105,
+      "expanded_final_top1": 0.6352952893138134,
+      "expanded_final_top3": 0.919828702320486,
+      "canonical_training_wall_seconds": 543.6293333789945,
+      "expanded_training_wall_seconds": 1281.1736307210085,
+      "canonical_step_matched": {
+        "policy": 1.7963659920287363,
+        "kl": 0.6003930998233171,
+        "top1": 0.5638382631212031,
+        "top3": 0.8834777412608306,
+        "epoch": 24,
+        "train_policy": 1.2910250806926793,
+        "wall_seconds": 543.4799233859958
+      },
+      "expanded_step_matched": {
+        "policy": 1.5819779573214885,
+        "kl": 0.386005060450274,
+        "top1": 0.6056667662583408,
+        "top3": 0.9105666766258341,
+        "epoch": 10,
+        "train_policy": 1.3793359837078731,
+        "wall_seconds": 521.0690105469985
+      }
+    }
+  ],
+  "best_within_24_epoch_cap_summary": {
+    "ce": {
+      "canonical": {
+        "mean": 1.730800549170254,
+        "stdev": 0.008180106062909774,
+        "median": 1.730774132014152,
+        "min": 1.7203185838622979,
+        "max": 1.7424390479609164
+      },
+      "expanded": {
+        "mean": 1.5909430827221633,
+        "stdev": 0.008731979540188473,
+        "median": 1.595702675231578,
+        "min": 1.5811628134598972,
+        "max": 1.59999846709272
+      },
+      "paired_delta_expanded_minus_canonical": {
+        "mean": -0.13985746644809066,
+        "stdev": 0.012571331225254586,
+        "median": -0.14496428220232405,
+        "min": -0.1523659290301944,
+        "max": -0.12032011676957777
+      },
+      "expanded_better_seeds": 5
+    },
+    "kl": {
+      "canonical": {
+        "mean": 0.5348276607687048,
+        "stdev": 0.008180104534947361,
+        "median": 0.5348012445695063,
+        "min": 0.524345704538273,
+        "max": 0.5464661646359423
+      },
+      "expanded": {
+        "mean": 0.39497019009171774,
+        "stdev": 0.008731981269395483,
+        "median": 0.39972977837223583,
+        "min": 0.3851899222161307,
+        "max": 0.40402557958871316
+      },
+      "paired_delta_expanded_minus_canonical": {
+        "mean": -0.13985747067698706,
+        "stdev": 0.012571326550249744,
+        "median": -0.14496428652382415,
+        "min": -0.15236592090957346,
+        "max": -0.12032012494955985
+      },
+      "expanded_better_seeds": 5
+    },
+    "top1": {
+      "canonical": {
+        "mean": 0.5549945224579225,
+        "stdev": 0.014737994745370176,
+        "median": 0.556767254257544,
+        "min": 0.5332138233243701,
+        "max": 0.5743949805796236
+      },
+      "expanded": {
+        "mean": 0.5840155363011652,
+        "stdev": 0.017393914693450495,
+        "median": 0.5773329349666367,
+        "min": 0.566228463300468,
+        "max": 0.6056667662583408
+      },
+      "paired_delta_expanded_minus_canonical": {
+        "mean": 0.029021013843242693,
+        "stdev": 0.024819201328291924,
+        "median": 0.04411911164226667,
+        "min": -0.008166517279155516,
+        "max": 0.04765461607409627
+      },
+      "expanded_better_seeds": 4
+    },
+    "top3": {
+      "canonical": {
+        "mean": 0.8821133353251668,
+        "stdev": 0.0024896922597350186,
+        "median": 0.8810875410815656,
+        "min": 0.8793944826212529,
+        "max": 0.8858181456030276
+      },
+      "expanded": {
+        "mean": 0.9091624340205159,
+        "stdev": 0.0009709549799108843,
+        "median": 0.9088736181655214,
+        "min": 0.9082760681207052,
+        "max": 0.9105666766258341
+      },
+      "paired_delta_expanded_minus_canonical": {
+        "mean": 0.027049098695349084,
+        "stdev": 0.002588282039169078,
+        "median": 0.02788566875809184,
+        "min": 0.02255751419181351,
+        "max": 0.0288815854994523
+      },
+      "expanded_better_seeds": 5
+    }
+  },
+  "final_epoch_24_summary": {
+    "policy": {
+      "canonical": {
+        "mean": 1.7691054108797963,
+        "stdev": 0.019924668318336954,
+        "median": 1.7659512219373454,
+        "min": 1.7424390479609164,
+        "max": 1.7963659920287363
+      },
+      "expanded": {
+        "mean": 1.6367319263436977,
+        "stdev": 0.015284731171634409,
+        "median": 1.6339153245962565,
+        "min": 1.6166297534751342,
+        "max": 1.653590810368966
+      },
+      "paired_delta_expanded_minus_canonical": {
+        "mean": -0.13237348453609865,
+        "stdev": 0.021677928572764352,
+        "median": -0.12790073995606344,
+        "min": -0.1624506674324797,
+        "max": -0.11236041156837939
+      },
+      "expanded_better_seeds": 5
+    },
+    "kl": {
+      "canonical": {
+        "mean": 0.5731325183158352,
+        "stdev": 0.019924666197251095,
+        "median": 0.5699783441448412,
+        "min": 0.5464661646359423,
+        "max": 0.6003930998233171
+      },
+      "expanded": {
+        "mean": 0.4407590353397506,
+        "stdev": 0.015284731067813098,
+        "median": 0.4379424262410105,
+        "min": 0.4206568705894334,
+        "max": 0.45761792601110596
+      },
+      "paired_delta_expanded_minus_canonical": {
+        "mean": -0.13237348297608467,
+        "stdev": 0.021677921421382227,
+        "median": -0.12790073705923388,
+        "min": -0.16245067358230664,
+        "max": -0.11236041813373521
+      },
+      "expanded_better_seeds": 5
+    },
+    "top1": {
+      "canonical": {
+        "mean": 0.5687680509909372,
+        "stdev": 0.004596212408514538,
+        "median": 0.5679713175978488,
+        "min": 0.5638382631212031,
+        "max": 0.5743949805796236
+      },
+      "expanded": {
+        "mean": 0.6194900906284234,
+        "stdev": 0.012223412434049633,
+        "median": 0.6188128672442984,
+        "min": 0.6066128871626332,
+        "max": 0.6352952893138134
+      },
+      "paired_delta_expanded_minus_canonical": {
+        "mean": 0.050722039637486296,
+        "stdev": 0.012754958474252738,
+        "median": 0.04626033263619167,
+        "min": 0.03864156956478437,
+        "max": 0.0714570261926103
+      },
+      "expanded_better_seeds": 5
+    },
+    "top3": {
+      "canonical": {
+        "mean": 0.8846031271785678,
+        "stdev": 0.0023101726613828995,
+        "median": 0.8840254954685788,
+        "min": 0.8818344786375859,
+        "max": 0.8878597749228164
+      },
+      "expanded": {
+        "mean": 0.9183348272084454,
+        "stdev": 0.002391237367501819,
+        "median": 0.9173887063041529,
+        "min": 0.9162931978886565,
+        "max": 0.9217707399661388
+      },
+      "paired_delta_expanded_minus_canonical": {
+        "mean": 0.033731700029877486,
+        "stdev": 0.004449641874187358,
+        "median": 0.032267702420077704,
+        "min": 0.02853301463997615,
+        "max": 0.03993626132855288
+      },
+      "expanded_better_seeds": 5
+    }
+  },
+  "matched_step_pairs": [
+    {
+      "seed": 4901,
+      "canonical_epoch": 24,
+      "expanded_epoch": 10,
+      "policy_delta": -0.18146017974691686,
+      "kl_delta": -0.18146015688095796,
+      "top1_delta": 0.006622846330046728,
+      "top3_delta": 0.026441589483119254
+    },
+    {
+      "seed": 4902,
+      "canonical_epoch": 24,
+      "expanded_epoch": 10,
+      "policy_delta": -0.12872340466417942,
+      "kl_delta": -0.12872341825790867,
+      "top1_delta": 0.020316701523752534,
+      "top3_delta": 0.025694651927098855
+    },
+    {
+      "seed": 4903,
+      "canonical_epoch": 24,
+      "expanded_epoch": 10,
+      "policy_delta": -0.12310204165424188,
+      "kl_delta": -0.12310203386604424,
+      "top1_delta": 0.009461209042924024,
+      "top3_delta": 0.01777711383328362
+    },
+    {
+      "seed": 4904,
+      "canonical_epoch": 24,
+      "expanded_epoch": 10,
+      "policy_delta": -0.15305687719673156,
+      "kl_delta": -0.15305689950469437,
+      "top1_delta": 0.020864455731500864,
+      "top3_delta": 0.025545264415894886
+    },
+    {
+      "seed": 4905,
+      "canonical_epoch": 24,
+      "expanded_epoch": 10,
+      "policy_delta": -0.21438803470724777,
+      "kl_delta": -0.21438803937304313,
+      "top1_delta": 0.04182850313713771,
+      "top3_delta": 0.027088935365003564
+    }
+  ],
+  "matched_step_summary": {
+    "policy": {
+      "mean": -0.1601461075938635,
+      "stdev": 0.038099811669774324,
+      "median": -0.15305687719673156,
+      "min": -0.21438803470724777,
+      "max": -0.12310204165424188
+    },
+    "kl": {
+      "mean": -0.16014610957652967,
+      "stdev": 0.038099808185007404,
+      "median": -0.15305689950469437,
+      "min": -0.21438803937304313,
+      "max": -0.12310203386604424
+    },
+    "top1": {
+      "mean": 0.01981874315307237,
+      "stdev": 0.013849018175475496,
+      "median": 0.020316701523752534,
+      "min": 0.006622846330046728,
+      "max": 0.04182850313713771
+    },
+    "top3": {
+      "mean": 0.024509511004880035,
+      "stdev": 0.0038140815764001377,
+      "median": 0.025694651927098855,
+      "min": 0.01777711383328362,
+      "max": 0.027088935365003564
+    }
+  },
+  "overlap_audit": {
+    "status": "not_found",
+    "statement": "Validation is held out by game/trajectory assignment; no exact physical-position-overlap audit artifact was found, so position-disjointness is not claimed."
+  },
+  "value_head_note": "Value metrics are excluded from conclusions: prior audit established a side-to-move / physical-Black-winner shortcut."
+}
