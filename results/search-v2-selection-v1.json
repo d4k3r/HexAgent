@@ -1,0 +1,16 @@
+{
+  "milestone": "SEARCH-V2",
+  "provenance": "generated_aggregate",
+  "selection": {
+    "budget": 128,
+    "c_puct": 2.5,
+    "fpu_mode": "parent_value_reduced",
+    "fpu_reduction": 0.25
+  },
+  "matched_evidence": [
+    {"configuration": "c1.5/reduced/0.25", "wins": 220, "losses": 180, "one_sided_bootstrap_95_lcb": 0.5175},
+    {"configuration": "c2.5/reduced/0.25", "wins": 215, "losses": 185, "one_sided_bootstrap_95_lcb": 0.5075},
+    {"comparison": "c2.5 versus c1.5", "c2_5_wins": 212, "c1_5_wins": 188}
+  ],
+  "caveat": "Budget 128 is the selected qualified operating point, not a claim about strongest possible final-play search."
+}
