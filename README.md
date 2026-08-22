@@ -55,7 +55,7 @@ runtime bundles are deliberately excluded.
 
 ## Attribution and boundary
 
-KataHex was an external teacher/reference system. `board.py` records a
-behavior-preserving KataHex virtual-detector port; attribution/licensing scope
-remains flagged for independent pre-push review. No new owned-code licence is
-asserted by this migration.
+KataHex was an external teacher/reference system. `board.py` includes a
+behavior-preserving virtual-detector port; its scope and preserved upstream
+license text are documented in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+No new owned-code licence is asserted by this migration.

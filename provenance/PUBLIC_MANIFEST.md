@@ -35,3 +35,5 @@ certificate/realizer, self-play-v2, Search-V2, forced-prefix diversity,
 Champion-2 and Deep-Teacher convergence infrastructure. Version-2 structured
 provenance is `EXPORT_SOURCES_V2.json`; it deliberately excludes raw corpora,
 teacher banks, models, build/runtime trees and local absolute-path registries.
+Third-party scope and the preserved KataHex upstream license text are recorded
+in `THIRD_PARTY_NOTICES.md` and `licenses/KataHex-LICENSE.txt`.
