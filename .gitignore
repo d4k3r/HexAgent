@@ -65,6 +65,10 @@ sources/
 third_party/
 toolchains/
 venvs/
+runtime/
+runtimes/
+.cache/
+.tox/
 
 # Local configuration, secrets, and platform/editor metadata
 .env
