@@ -1,0 +1,13 @@
+{
+  "milestone": "CHAMPION-1",
+  "provenance": "generated_aggregate",
+  "identity": "B50-old historical checkpoint lineage",
+  "checkpoint_sha256": "d031b5d4cfa42b18bce235fe4b76b53ad3d1c9dc9872d90f4e1aa6bfbf2d4cc6",
+  "onnx_sha256": "2c0601a4c4c11d1a8595d3c47dd981c91f2d108274de66f7f40ae4c628d2ea86",
+  "matched_results": [
+    {"opponent": "Champion-0", "wins": 329, "losses": 71},
+    {"opponent": "S75-clean", "wins": 270, "losses": 130}
+  ],
+  "status": "historical lineage; not the current champion",
+  "omissions": ["weights", "ONNX model", "raw game records"]
+}
