@@ -1,87 +1,61 @@
 # HexAgent - reconstructed Hex policy/value agent
 
-This repository is my independent post-coursework reconstruction and experimental extension of work that began in a University of Manchester AI & Games group project. It is **not** a fork or wholesale republication of the original coursework repository. The original project included university-provided infrastructure and multiple student groups; this public repository contains only a conservative subset of my later reconstruction tooling and results.
+This is an independent post-coursework reconstruction and research portfolio.
+The University of Manchester COMP34111 Group 49 work is historical context
+only: this repository is neither a fork nor a wholesale republication of that
+coursework, KataHex, Benzene, or Neurobenzene.
 
-## Architecture
+## System
 
-The intended playing system is:
+The modern reconstruction uses deterministic Python and C++ PUCT around a
+six-plane Student policy/value boundary. The C++ layer has optional ONNX
+Runtime CPU/CUDA integration and shared batching, but this repository bundles
+no vendor runtime, model, checkpoint, or production binary. CPU-only tests and
+the no-runtime CMake core are the supported public reproduction path.
 
-```text
-state → Student policy P(s,a) + value V(s) → PUCT-guided MCTS → root visits → move
-```
+Literal board connectivity is always terminal authority. The elementary
+connection certificate and physical realizer are restricted audited mechanisms,
+not general H-search.
 
-The currently qualified live gameplay diagnostic is deliberately narrower:
+## Qualified milestones
 
-```text
-state → Student → legal mask → argmax move
-```
+- Stage-7 certificate-aware salvage retains no policy rows after the first
+  valid restricted certificate.
+- Champion-1 is a historical matched-evaluation lineage, not the current
+  champion.
+- Native self-play-v2 has explicit new, resume and completed-run lifecycle
+  semantics.
+- Search-V2 is 128 visits, `c_puct=2.5`, parent-value-reduced FPU, reduction
+  0.25. It is a qualified operating point, not a strongest-final-play claim.
+- Frozen forced-prefix diversity improved gameplay in the matched BASE versus
+  DIVERSE experiment: 220-180, score 0.55, one-sided bootstrap 95% LCB 0.52.
+  DIVERSE then beat Champion-1 261-139, score 0.6525, LCB 0.62, supporting
+  Champion-2 promotion.
+- Deep-Teacher-1600 completed generation and frozen-subset convergence. It is
+  stability evidence for a next causal experiment, not Student-strength
+  evidence. Deep-Teacher training remains future work.
 
-It has **no MCTS/PUCT**, so its outcomes are not full-agent strength results.
+This work does not claim that Champion-2 beats KataHex or MoHex, that 11x11
+Hex is solved, that 1600 is optimal, or that Deep Teacher improves Student
+gameplay.
 
-## KataHex teacher and data contract
+## Reproduce bounded checks
 
-The Student distils completed KataHex root-search **physical visit distributions**, not raw neural-network output or one-hot played moves. The policy head remains 121 physical board actions: pass, resign, and swap are not policy actions.
+    python -m venv .venv
+    . .venv/bin/activate
+    pip install -r requirements.txt
+    PYTHONPATH=src python -m unittest discover -s tests -p "test_*.py"
+    cmake -S cpp -B build/cpp
+    cmake --build build/cpp
+    ctest --test-dir build/cpp --output-on-failure
 
-Teacher games have two explicit phases:
+See `docs/` for scope, reproduction and milestone detail. `results/` contains
+only compact aggregate evidence; raw games, teacher records, weights and local
+runtime bundles are deliberately excluded.
 
-- **Phase A:** completed KataHex root visits supervise a soft policy target `π`; the root value is retained separately.
-- **Phase B:** after KataHex virtual terminal but before the university-style literal board connection, pass-forbidden physical completion continues to literal termination. These rows have `π = null` and zero policy weight.
+## Attribution and boundary
 
-## Dataset and controlled scaling result
-
-The qualified teacher corpus contains **4,120 complete games** and **218,669 Phase-A supervised positions**.
-
-For a controlled scaling comparison, training used the same frozen validation split in every run:
-
-| Split | Games | Phase-A rows |
-| --- | ---: | ---: |
-| Canonical training | 1,536 | 81,809 |
-| Expanded training | 3,736 | 198,587 |
-| Shared validation | 384 | 20,082 |
-
-Across five paired seeds, best validation performance within runs capped at 24 epochs improved with the expanded teacher data:
-
-| Metric | Canonical mean | Expanded mean |
-| --- | ---: | ---: |
-| Policy cross-entropy | 1.7308 | 1.5909 |
-| Policy KL | 0.5348 | 0.3950 |
-
-Expanded CE and KL improved in 5/5 paired seeds. The improvement also persisted in an approximately matched optimizer-step comparison. This is not a statistical-significance claim.
-
-## Current finding
-
-On 184 deterministic Student-generated disagreement states re-queried from KataHex, 165 were searchable and 19 were already teacher virtual/proof terminal. On searchable states, best-validation-policy expanded Students were more aligned with the teacher than canonical Students: CE 3.0269 vs 3.2342 and teacher top-1 agreement 36.36% vs 25.45%.
-
-However, deterministic raw-policy gameplay ranking changed when selecting final rather than best-policy checkpoints. I therefore treat raw greedy games as a diagnostic of policy behaviour, not a stable full-agent benchmark. The next meaningful evaluation is Student policy/value integrated inside qualified PUCT/MCTS search.
-
-## Validation notes
-
-- Validation is held out by game/trajectory, not by independently sampled positions.
-- Exact encoded Student-input overlap was measured at 4.01% for canonical train vs validation and 5.36% for expanded train vs the same validation set.
-- Current value-head metrics are affected by a strong physical-colour / side-to-move shortcut.
-- Full reconstructed Student+PUCT playing-strength evaluation remains future work.
-
-## Repository map
-
-- `src/hex_reconstruction/` — board/features, versioned example schema, soft-policy loss, Student model, GTP framing, and resumable manifests.
-- `tests/` — focused offline tests, including fake-engine protocol tests.
-- `results/` — compact paired-scaling metrics, overlap audit, and SVG plots.
-- `docs/RESULTS.md` — concise result interpretation.
-- `provenance/PUBLIC_MANIFEST.md` — publication scope and exclusions.
-
-## Lightweight reproduction
-
-The public subset has no teacher model, checkpoints, engine binary, university framework, or generated corpus. It can reproduce its focused unit tests after installing the declared Python dependencies:
-
-```bash
-python -m venv .venv
-. .venv/bin/activate
-pip install -r requirements.txt
-PYTHONPATH=src python -m unittest discover -s tests -p 'test_*.py'
-```
-
-Full teacher generation and scaled training require external KataHex assets and the frozen local dataset/checkpoint artifacts, intentionally excluded here.
-
-## Attribution
-
-KataHex is an external teacher/reference system. The University of Manchester framework and historical Group 49 coursework code remain separate historical references and are not included here. This repository does not imply authorship of KataHex, university infrastructure, or all historical Group 49 work.
+KataHex was an external teacher/reference system. `board.py` records a
+behavior-preserving KataHex virtual-detector port; attribution/licensing scope
+remains flagged for independent pre-push review. No new owned-code licence is
+asserted by this migration.

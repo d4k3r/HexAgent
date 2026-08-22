@@ -1,0 +1,10 @@
+{
+  "export_version": 2,
+  "strategy": "curated migration inside the existing public repository",
+  "source_identity": "private authoritative reconstruction workspace; filesystem path intentionally omitted",
+  "milestones": ["QUALIFIED-CORE", "STAGE7-SALVAGE", "CHAMPION-1", "SELFPLAY-V2", "SEARCH-V2", "FORCED-PREFIX-DIVERSITY", "BASE-DIVERSE-CHAMPION-2", "DEEP-TEACHER-1600"],
+  "provenance_classes": ["independent reconstruction", "generated aggregate", "historical coursework reference", "third-party reference"],
+  "sanitization": ["absolute local paths removed", "raw corpora omitted", "models and checkpoints omitted", "vendor runtimes omitted"],
+  "aggregate_source_hashes": {"deep_teacher_1600_manifest": "8249b089679a91c4015b754534b7864e216e96ab4ad5fff6413f8da75a333987", "deep_teacher_3200_subset_manifest": "1b5d673fc80560ac5fe4c84c65a6ba20ddfc520637ac83849bc633805bff3bb1"},
+  "intentional_omissions": ["artifacts", "build outputs", "raw self-play games", "raw teacher results", "weights and ONNX models", "source clones", "toolchains", "logs", "machine-local registries"]
+}

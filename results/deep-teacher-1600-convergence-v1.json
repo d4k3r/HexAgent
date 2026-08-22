@@ -1,0 +1,9 @@
+{
+  "milestone": "DEEP-TEACHER-1600",
+  "provenance": "generated_aggregate",
+  "run_1600": {"committed": 4096, "missing": 0, "duplicate_ids": 0, "errors": 0, "manifest_sha256": "8249b089679a91c4015b754534b7864e216e96ab4ad5fff6413f8da75a333987"},
+  "frozen_subset_3200": {"committed": 512, "missing": 0, "duplicate_ids": 0, "errors": 0, "manifest_sha256": "1b5d673fc80560ac5fe4c84c65a6ba20ddfc520637ac83849bc633805bff3bb1"},
+  "convergence": {"all": {"top1": 0.75390625, "top3": 0.830078125, "mean_tv": 0.05437648}, "broad": {"top1": 0.78125, "top3": 0.875, "mean_tv": 0.04862271}, "hard": {"top1": 0.7265625, "top3": 0.78515625, "mean_tv": 0.06013025}},
+  "interpretation": "1600 is a practical convergence budget for the next causal experiment; this is not Student-strength evidence.",
+  "omissions": ["full teacher bank", "raw per-position results", "detailed 512-row convergence record"]
+}

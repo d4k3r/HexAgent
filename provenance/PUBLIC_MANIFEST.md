@@ -25,3 +25,13 @@ This repository is a deliberately small public export of independent post-course
 | University `Game.py`, `AgentBase`, C++ PUCT path | Excluded | University-framework integration is not republished here. |
 
 No license is included in this initial snapshot because the public subset is intentionally conservative while ownership and redistribution scope are being reviewed.
+
+## Migration note (2026-08-22)
+
+The original manifest above is retained as historical evidence of the
+13-August curation boundary. The current curated migration expands the public
+independent reconstruction to qualified C++/Python PUCT, restricted
+certificate/realizer, self-play-v2, Search-V2, forced-prefix diversity,
+Champion-2 and Deep-Teacher convergence infrastructure. Version-2 structured
+provenance is `EXPORT_SOURCES_V2.json`; it deliberately excludes raw corpora,
+teacher banks, models, build/runtime trees and local absolute-path registries.
