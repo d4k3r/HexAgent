@@ -1,0 +1,10 @@
+{
+  "milestone": "FORCED-PREFIX-DIVERSITY",
+  "provenance": "generated_aggregate",
+  "mechanism": "frozen deterministic three-ply forced prefixes",
+  "normal_games": 12288,
+  "forced_games": 4096,
+  "normal_manifest_sha256": "385e3e1f0baf61d7c50f4b63df0c6a2b2c6dc7cb49f0ca6f12fd0536c4cc08f2",
+  "forced_manifest_sha256": "fd33f2518f606a1b5a6c4f2c3dbb594b9e81ed9f8f4b2fd22ef4a20e1a789ee1",
+  "omissions": ["prefix bank", "raw NORMAL games", "raw FORCED games"]
+}
