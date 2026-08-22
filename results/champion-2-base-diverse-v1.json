@@ -1,0 +1,22 @@
+{
+  "milestone": "BASE-DIVERSE-CHAMPION-2",
+  "provenance": "generated_aggregate",
+  "causal_training_comparison": {
+    "candidate": "DIVERSE",
+    "control": "BASE",
+    "wins": 220,
+    "losses": 180,
+    "score": 0.55,
+    "one_sided_bootstrap_95_lcb": 0.52
+  },
+  "promotion_comparison": {
+    "candidate": "DIVERSE",
+    "opponent": "Champion-1",
+    "wins": 261,
+    "losses": 139,
+    "score": 0.6525,
+    "one_sided_bootstrap_95_lcb": 0.62
+  },
+  "status": "Champion-2 promotion",
+  "omissions": ["Champion-2 weights", "ONNX model", "raw pair records", "raw corpora"]
+}
