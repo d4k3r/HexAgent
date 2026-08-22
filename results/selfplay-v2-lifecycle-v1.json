@@ -1,0 +1,10 @@
+{
+  "milestone": "SELFPLAY-V2",
+  "provenance": "generated_aggregate",
+  "properties": [
+    "explicit new, resume and complete lifecycle states",
+    "deterministic game identifiers and completion audit",
+    "recovery-safe partial-run handling"
+  ],
+  "omissions": ["raw self-play games", "production schedules", "logs"]
+}

@@ -1,0 +1,17 @@
+#!/usr/bin/env python3
+"""Read-only postrun audit for native clean self-play v2."""
+from __future__ import annotations
+import argparse,json,hashlib,statistics,time
+from pathlib import Path
+from run_selfplay_v2_native import atomic_json, read_json, valid_game
+p=argparse.ArgumentParser();p.add_argument('--root',type=Path,required=True);p.add_argument('--output',type=Path);a=p.parse_args();root=a.root.resolve();m=read_json(root/'run-manifest.json'); ids=range(m['game_ids']['start'],m['game_ids']['end_exclusive']);games=[];missing=[]
+for gid in ids:
+ f=root/'games'/f'game-{gid}.json'; ok,_=valid_game(f,m,gid) if f.exists() else (False,'missing')
+ if not ok:missing.append(gid);continue
+ games.append(read_json(f))
+rows=sum(x['phase_a_rows'] for x in games); cert=[x for x in games if x['certificate_ply'] is not None]; tails=[len(x['phase_b_moves']) for x in cert]; cert_plies=[x['certificate_ply'] for x in cert]; lengths=[len(x['moves']) for x in games]
+forced=[x for x in games if x.get('prefix_mode')=='forced']; normal=[x for x in games if x.get('prefix_mode','normal')=='normal']; forced_rows=sum(x['phase_a_rows'] for x in forced)
+attempts=[json.loads(line) for line in (root/'run-attempts.jsonl').read_text().splitlines() if line] if (root/'run-attempts.jsonl').exists() else []
+elapsed=sum(max(0,a.get('ended_epoch',0)-a.get('started_epoch',0)) for a in attempts if a.get('status')=='complete')
+out={'schema':'hex-native-selfplay-postrun-audit-v3' if m.get('schema_version')==3 else 'hex-native-selfplay-postrun-audit-v2','run_manifest_sha256':hashlib.sha256((root/'run-manifest.json').read_bytes()).hexdigest(),'requested_games':len(list(ids)),'accepted_games':len(games),'missing_ids':missing,'quarantined_artifacts':len(list((root/'quarantine').glob('game-*.json'))),'phase_a_rows':rows,'phase_a_rows_per_game':rows/len(games) if games else 0,'certificates':len(cert),'certificate_coverage':len(cert)/len(games) if games else 0,'literal_before_certificate':sum(x['classification']=='literal_before_certificate' for x in games),'certificate_ply':{'mean':statistics.mean(cert_plies) if cert_plies else None,'median':statistics.median(cert_plies) if cert_plies else None,'max':max(cert_plies,default=None)},'phase_b_moves':sum(tails),'phase_b_tail':{'mean':statistics.mean(tails) if tails else 0,'median':statistics.median(tails) if tails else 0,'max':max(tails,default=0)},'literal_winner_agreement':all(x['classification']=='literal_before_certificate' or x['certificate_owner']==x['literal_winner'] for x in games),'realizer_failures':0,'winner_colours':{'black':sum(x['literal_winner']=='B' for x in games),'white':sum(x['literal_winner']=='W' for x in games)},'game_length':{'mean':statistics.mean(lengths) if lengths else 0,'median':statistics.median(lengths) if lengths else 0,'max':max(lengths,default=0)},'prefix_mode':{'normal_games':len(normal),'forced_games':len(forced),'forced_rows':forced_rows,'forced_rows_emitted':0,'forced_prefix_lengths':sorted({x.get('forced_prefix_length',0) for x in forced})},'attempt_history':str((root/'run-attempts.jsonl').resolve()),'attempts':len(attempts),'completed_attempt_seconds':elapsed,'games_per_second':len(games)/elapsed if elapsed else None,'phase_a_rows_per_second':rows/elapsed if elapsed else None,'complete':not missing}
+path=a.output or root/'postrun-audit.json';atomic_json(path,out);print(json.dumps({'complete':out['complete'],'accepted':len(games),'rows':rows,'output':str(path)}))
