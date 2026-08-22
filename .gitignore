@@ -18,3 +18,60 @@ datasets/
 # OS/editor files
 .DS_Store
 .vscode/
+
+# Build/package output
+build/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+dist/
+*.egg-info/
+*.o
+*.a
+*.so
+*.dll
+*.dylib
+
+# Additional Python tooling
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Runtime/transient state
+logs/
+gtp_logs/
+*.partial
+*.tmp
+*.lock
+*.pid
+*.stdout
+*.stderr
+
+# Additional model/data formats
+*.pth
+*.ckpt
+*.safetensors
+*.plan
+*.npy
+*.npz
+*.mmap
+*.memmap
+
+# Vendor/reference clones and local environments
+sources/
+third_party/
+toolchains/
+venvs/
+
+# Local configuration, secrets, and platform/editor metadata
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*:Zone.Identifier
+Thumbs.db
+.idea/
