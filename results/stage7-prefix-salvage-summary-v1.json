@@ -1,0 +1,13 @@
+{
+  "milestone": "STAGE7-SALVAGE",
+  "provenance": "generated_aggregate",
+  "summary": {
+    "games": 16128,
+    "original_policy_rows": 1588522,
+    "retained_policy_rows": 417693,
+    "removed_post_certificate_rows": 1170829,
+    "effective_color_flips": 67
+  },
+  "claim": "A certificate-producing row retains no later policy rows after the first valid restricted certificate.",
+  "omissions": ["raw games", "raw policy rows", "production logs"]
+}
