@@ -1,0 +1,63 @@
+{
+  "schema": "hex-autonomous-generation-recipe-v1",
+  "recipe_id": "control-autonomous-3gen-v1",
+  "approval_status": "approved",
+  "decision_evidence": {
+    "teacher_dose_decision": "CONTROL",
+    "deep5_vs_control": {"score": 0.5225, "one_sided_95_lcb": 0.49, "promotion_qualified": false},
+    "deep10_vs_control": {"score": 0.505, "one_sided_95_lcb": 0.4775, "promotion_qualified": false},
+    "rule": "Gameplay gate decides; validation CE is diagnostic only."
+  },
+  "sources": {
+    "teacher_breadth": {"identity": "teacher100-qualified-v1", "weight": 0.20},
+    "teacher_deep": {"identity": "deep1600-v1", "weight": 0.0},
+    "historical": {"identity": "stage7-prefix-salvage-v1", "weight": 0.20},
+    "fresh": {"normal_weight": 0.75, "forced_weight": 0.25, "combined_weight": 0.60}
+  },
+  "static_sources": {
+    "teacher_prepared": "reconstruction/artifacts/stage8b-v1/prepared-data-fp32-v1",
+    "historical_prepared": "reconstruction/artifacts/stage8b-v2-clean-selfplay/prepared-clean-fp32-v2"
+  },
+  "selfplay": {
+    "games": {"normal": 12288, "forced": 4096},
+    "search": {"budget": 128, "c_puct": 2.5, "fpu_mode": "parent_value_reduced", "fpu_reduction": 0.25},
+    "bridge_controller": "active",
+    "literal_winner_authority": true,
+    "inference": {"concurrency": 128, "max_batch": 96, "wait_us": 200, "watchdog_seconds": 120},
+    "resource_profile": {
+      "schema": "hex-native-selfplay-resource-profile-v1",
+      "profile_id": "selfplay-resource-profile-v1",
+      "approval_status": "APPROVED_FOR_AUTONOMOUS_SELFPLAY",
+      "path": "reconstruction/config/autonomous-generation-v1/selfplay-resource-profile-v1.json",
+      "sha256": "fa156306323cf5301023749cae2f60fb69a68424596ac492ef1fb37eab2850a8",
+      "process_count": 1,
+      "concurrency_per_process": 128,
+      "max_batch": 96,
+      "wait_us": 200
+    },
+    "forced_prefix_bank": {"path": "reconstruction/artifacts/selfplay-v2-native-clean/forced-prefix-bank-v1/prefix-bank.json", "sha256": "8f6331fb1d582b9dc47b3659b1e3c915847582ef10634e02eb561f55cb314849"}
+  },
+  "training": {
+    "rows_per_epoch": 400000,
+    "epochs": 4,
+    "base_batch": 64,
+    "optimizer": {"name": "AdamW", "lr": 0.001, "weight_decay": 0.0001},
+    "selection": "best-validation-policy on frozen Teacher100 held-out split"
+  },
+  "candidate_plan": {"count": 3, "seeds": [4901, 4902, 4903], "difference_policy": "training seed only"},
+  "evaluation": {
+    "opening_bank": "reconstruction/artifacts/puct-fpu-strength-v1/gameplay-qualifier/openings-v1.json",
+    "screening_pairs": 32,
+    "promotion_pairs": 200,
+    "promotion_lcb_strictly_greater_than": 0.5,
+    "bridge_controller": "active",
+    "execution": {"concurrency": 64, "max_batch": 96, "wait_us": 200, "watchdog_seconds": 120}
+  },
+  "governance": {
+    "max_generations": 3,
+    "continue_after_no_promotion": true,
+    "global_registry_mutation": "forbidden_during_trial",
+    "promotion_action": "advance_hash_bound_run_local_incumbent",
+    "final_action": "manual_global_registry_ratification_only"
+  }
+}

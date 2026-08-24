@@ -32,12 +32,23 @@ not general H-search.
   DIVERSE then beat Champion-1 261-139, score 0.6525, LCB 0.62, supporting
   Champion-2 promotion.
 - Deep-Teacher-1600 completed generation and frozen-subset convergence. It is
-  stability evidence for a next causal experiment, not Student-strength
-  evidence. Deep-Teacher training remains future work.
+  stability evidence for a causal teacher-dose experiment, not Student-strength
+  evidence. Neither DEEP5 nor DEEP10 passed the frozen paired-game promotion
+  gate against CONTROL, so CONTROL is the selected production teacher recipe.
+- A controlled 512-game resource qualification selected one-process
+  C128/B96/wait-200us for mass self-play on the tested Ryzen 7 9800X3D + RTX
+  5080 machine: 1.7217 games/s versus 1.1759 for C64/B96/wait-200us, a 46.41%
+  improvement. This changes execution geometry only, not Search-V2 or gameplay
+  evaluation settings.
+- The fail-closed autonomous production coordinator completed one real
+  generation end-to-end. Its S4903 challenger beat Champion-2 249-151,
+  score 0.6225, one-sided bootstrap 95% LCB 0.595, and was manually ratified
+  as Champion-3. The prepared next three-generation run has not been launched
+  in this public snapshot.
 
-This work does not claim that Champion-2 beats KataHex or MoHex, that 11x11
-Hex is solved, that 1600 is optimal, or that Deep Teacher improves Student
-gameplay.
+This work does not claim that Champion-3 beats KataHex or MoHex, that 11x11
+Hex is solved, that 1600 is optimal, that CONTROL is globally optimal, that
+C128 is optimal on every machine, or that autonomous improvement is guaranteed.
 
 ## Reproduce bounded checks
 
@@ -51,7 +62,9 @@ gameplay.
 
 See `docs/` for scope, reproduction and milestone detail. `results/` contains
 only compact aggregate evidence; raw games, teacher records, weights and local
-runtime bundles are deliberately excluded.
+runtime bundles are deliberately excluded. The production coordinator is
+published for inspection and CPU/fake lifecycle testing; its real adapters
+expect locally supplied, separately qualified model/runtime artifacts.
 
 ## Attribution and boundary
 

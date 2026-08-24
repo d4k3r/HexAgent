@@ -63,7 +63,7 @@
       "files": [
         {
           "public_path": "docs/CHAMPION_LINEAGE.md",
-          "public_sha256": "1bb52eb6d89d36be7a2d0393d21826ff03d78f4b58becfcea69d8787d1d18781",
+          "public_sha256": "acdcb96a915d4f01ae8feed8d81f9ba06e22c8e7b5cf2a6b9af84366e4b7a5f3",
           "relationship": "public-curation"
         }
       ],
@@ -344,7 +344,7 @@
         },
         {
           "public_path": "README.md",
-          "public_sha256": "324b8d044dd1e5e8d93bbe51affd6d38989229d68ce84ceddf85832db3ee57fa",
+          "public_sha256": "a46c6fa82322d38a047a00b9599d10ff4b553bb80b81c3a0b940e6ede31f84f4",
           "relationship": "public-curation"
         },
         {
@@ -359,7 +359,7 @@
         },
         {
           "public_path": "docs/RESULTS.md",
-          "public_sha256": "916f1cf48fe73ef830982fa8bb430c004977d9dce9226c1cba83d213de3d6cde",
+          "public_sha256": "06c9a85fa1b7f7a01861fa2f0f47fc0d0b00005089b32d123f882e7c07626024",
           "relationship": "public-curation"
         },
         {
@@ -1250,6 +1250,145 @@
       "milestone": "SELFPLAY-THROUGHPUT-V1",
       "provenance_class": "public-curation",
       "sanitization": "Raw corpora, pair records, models, checkpoints, build/runtime bundles, logs and machine-local state are intentionally omitted."
+    },
+    {
+      "files": [
+        {
+          "authoritative_path": "reconstruction/scripts/autonomous_generation_v1.py",
+          "authoritative_sha256": "1a7be9d8adc1c9f6e719e514109fb545c87c7b127951fd65166e5909809abb0a",
+          "public_path": "scripts/autonomous_generation_v1.py",
+          "public_sha256": "1a7be9d8adc1c9f6e719e514109fb545c87c7b127951fd65166e5909809abb0a",
+          "relationship": "direct-copy"
+        },
+        {
+          "authoritative_path": "reconstruction/scripts/autonomous_generation_production_v1.py",
+          "authoritative_sha256": "51b5e9744f55a6d5eb93041d5be255b9ad6a86a157760ea4e39d6b15d630392a",
+          "public_path": "scripts/autonomous_generation_production_v1.py",
+          "public_sha256": "51b5e9744f55a6d5eb93041d5be255b9ad6a86a157760ea4e39d6b15d630392a",
+          "relationship": "direct-copy"
+        },
+        {
+          "authoritative_path": "reconstruction/scripts/monitor_autonomous_generation_production_v1.py",
+          "authoritative_sha256": "327831c51947d9bea28b0b73cf7fca59852b716a00cdaccf42ed35f71dd57e3c",
+          "public_path": "scripts/monitor_autonomous_generation_production_v1.py",
+          "public_sha256": "327831c51947d9bea28b0b73cf7fca59852b716a00cdaccf42ed35f71dd57e3c",
+          "relationship": "direct-copy"
+        },
+        {
+          "authoritative_path": "reconstruction/scripts/prepare_stage8b_autonomous_control_v1.py",
+          "authoritative_sha256": "8ce0248f8af7c262cb02a252f34a4f94b9baf6f155580dcb1921c31e89f1dbc2",
+          "public_path": "scripts/prepare_stage8b_autonomous_control_v1.py",
+          "public_sha256": "8ce0248f8af7c262cb02a252f34a4f94b9baf6f155580dcb1921c31e89f1dbc2",
+          "relationship": "direct-copy"
+        },
+        {
+          "authoritative_path": "reconstruction/scripts/audit_autonomous_candidate_initialization_v1.py",
+          "authoritative_sha256": "eb05774248eb53c36c276d61f8c19c85ef5ab168995143a0d052e66eb9323a72",
+          "public_path": "scripts/audit_autonomous_candidate_initialization_v1.py",
+          "public_sha256": "eb05774248eb53c36c276d61f8c19c85ef5ab168995143a0d052e66eb9323a72",
+          "relationship": "direct-copy"
+        },
+        {
+          "authoritative_path": "reconstruction/config/autonomous-generation-v1/production-control-3gen-v1.json",
+          "authoritative_sha256": "4dc16ce647b0ae223f5fdd4958beb1e4a9fb7e80b9006c2f28eb9f729ecdd1be",
+          "public_path": "config/autonomous-generation-v1/production-control-3gen-v1.json",
+          "public_sha256": "4dc16ce647b0ae223f5fdd4958beb1e4a9fb7e80b9006c2f28eb9f729ecdd1be",
+          "relationship": "direct-copy"
+        },
+        {
+          "authoritative_path": "reconstruction/config/autonomous-generation-v1/template-control-v1.json",
+          "authoritative_sha256": "c8c3adca8dd4119412f2ad10a4dc48ece78181bab07e3ad9e3e2ef0136fe5be4",
+          "public_path": "config/autonomous-generation-v1/template-control-v1.json",
+          "public_sha256": "c8c3adca8dd4119412f2ad10a4dc48ece78181bab07e3ad9e3e2ef0136fe5be4",
+          "relationship": "direct-copy"
+        },
+        {
+          "authoritative_path": "reconstruction/config/autonomous-generation-v1/template-deep5-v1.json",
+          "authoritative_sha256": "f2274181890b47cb589ab69cecc8926532178d93ef02a428e731d5731cebbac0",
+          "public_path": "config/autonomous-generation-v1/template-deep5-v1.json",
+          "public_sha256": "f2274181890b47cb589ab69cecc8926532178d93ef02a428e731d5731cebbac0",
+          "relationship": "direct-copy"
+        },
+        {
+          "authoritative_path": "reconstruction/config/autonomous-generation-v1/template-deep10-v1.json",
+          "authoritative_sha256": "ff0dca1d33de74795aaf7b458ddc8a27bcae6fc82ea923dd137f5fadf5aa5729",
+          "public_path": "config/autonomous-generation-v1/template-deep10-v1.json",
+          "public_sha256": "ff0dca1d33de74795aaf7b458ddc8a27bcae6fc82ea923dd137f5fadf5aa5729",
+          "relationship": "direct-copy"
+        }
+      ],
+      "id": "autonomous-generation-production-owned-reconstruction",
+      "inclusion_rationale": "Public dependency closure, compact aggregate evidence, or retained historical publication context.",
+      "milestone": "AUTONOMOUS-GENERATION-PRODUCTION-V1",
+      "provenance_class": "owned-reconstruction",
+      "sanitization": "Raw corpora, pair records, models, checkpoints, build/runtime bundles, logs and machine-local state are intentionally omitted.",
+      "source_evidence": [
+        {
+          "authoritative_path": "reconstruction/artifacts/autonomous-generation-v1/first-1gen-control-v1/final-summary.json",
+          "authoritative_sha256": "e2cb107464f0b680eef894eaaeb7b4e49c1f45982b8f511e7183b6d5808c53aa",
+          "role": "completed autonomous Generation-1 final summary"
+        },
+        {
+          "authoritative_path": "reconstruction/artifacts/champions-v1/champion-3.json",
+          "authoritative_sha256": "c4370ecd6c8479bccda864383a69f564870a815a8eef77b43c46e1a79607eda9",
+          "role": "manual Champion-3 ratification registry"
+        }
+      ]
+    },
+    {
+      "files": [
+        {
+          "public_path": "docs/AUTONOMOUS_GENERATION_V1.md",
+          "public_sha256": "8ad519cfde556cec35b57276fab3879c9be458e6e733974b453693f6073ddddf",
+          "relationship": "public-curation"
+        },
+        {
+          "public_path": "docs/CHAMPION_3.md",
+          "public_sha256": "b336cd9467d7e917cca4f8f8aef3ade705a080b451fc6e25020f93386aab2498",
+          "relationship": "public-curation"
+        },
+        {
+          "public_path": "results/autonomous-generation-1-champion-3-v1.json",
+          "public_sha256": "d9cc0d12ed0ae4f5275f78aafde0db8c457cf4f70594bfb4cd209f5500bc9f47",
+          "relationship": "public-curation"
+        }
+      ],
+      "id": "autonomous-generation-champion3-aggregate-results",
+      "inclusion_rationale": "Public dependency closure, compact aggregate evidence, or retained historical publication context.",
+      "milestone": "AUTONOMOUS-GENERATION-CHAMPION3",
+      "provenance_class": "aggregate-result",
+      "sanitization": "Raw corpora, pair records, models, checkpoints, build/runtime bundles, logs and machine-local state are intentionally omitted.",
+      "source_evidence": [
+        {
+          "authoritative_path": "reconstruction/artifacts/autonomous-generation-v1/first-1gen-control-v1/final-summary.json",
+          "authoritative_sha256": "e2cb107464f0b680eef894eaaeb7b4e49c1f45982b8f511e7183b6d5808c53aa",
+          "role": "completed autonomous Generation-1 final summary"
+        },
+        {
+          "authoritative_path": "reconstruction/artifacts/autonomous-generation-v1/first-1gen-control-v1/generation-0001/promotion/C2-AUTO-G0001-S4903/summary.json",
+          "authoritative_sha256": "561554c045db9bdd97a17631659acf4c9202d588a436257eed5d14e8e776fed9",
+          "role": "qualified Champion-3 promotion summary"
+        },
+        {
+          "authoritative_path": "reconstruction/artifacts/champions-v1/champion-3.json",
+          "authoritative_sha256": "c4370ecd6c8479bccda864383a69f564870a815a8eef77b43c46e1a79607eda9",
+          "role": "manual Champion-3 ratification"
+        }
+      ]
+    },
+    {
+      "files": [
+        {
+          "public_path": "tests/test_autonomous_production_contract.py",
+          "public_sha256": "7e25a672b094df1fea5573566bb85d3cdc8ab7b5f5fa47604170721f1f0fa426",
+          "relationship": "public-curation"
+        }
+      ],
+      "id": "autonomous-generation-public-contract-tests",
+      "inclusion_rationale": "Public dependency closure, compact aggregate evidence, or retained historical publication context.",
+      "milestone": "AUTONOMOUS-GENERATION-PRODUCTION-V1",
+      "provenance_class": "public-curation",
+      "sanitization": "CPU-only/fake contract coverage. Private artifact-dependent integration fixtures, models and runtime bundles are intentionally omitted."
     }
   ],
   "historical_public_foundation": {
@@ -1265,7 +1404,8 @@
     "nested source clones, patched third-party trees and vendor binaries",
     "logs, caches, partial files and machine-local registries",
     "teacher-dose prepared arrays and trained candidates",
-    "throughput telemetry logs and detailed per-game fingerprint records"
+    "throughput telemetry logs and detailed per-game fingerprint records",
+    "autonomous production artifacts and per-generation raw corpora"
   ],
   "schema": "hex-agent-public-export-sources-v2",
   "strategy": "curated migration inside the existing public repository",

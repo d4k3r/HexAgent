@@ -1,0 +1,13 @@
+{
+  "schema": "autonomous-generation-1-champion-3-v1",
+  "starting_incumbent": {"id": "champion-2", "checkpoint_sha256": "a4fdf9adac91468ff966e187a9423d519246288d9fbac470db863b8e5e430288", "onnx_sha256": "def38b0f0d321f74b38ff113b5e9c630ac69569cffd0f85aaffb740c9a1736c5"},
+  "recipe_id": "control-autonomous-3gen-v1",
+  "recipe_sha256": "4dc16ce647b0ae223f5fdd4958beb1e4a9fb7e80b9006c2f28eb9f729ecdd1be",
+  "generation": 1,
+  "selfplay": {"normal_accepted": 12288, "forced_accepted": 4096, "quarantine": 0, "resource_profile_sha256": "fa156306323cf5301023749cae2f60fb69a68424596ac492ef1fb37eab2850a8"},
+  "challenger": {"id": "C2-AUTO-G0001-S4903", "checkpoint_sha256": "a4258df56e2d4f4ef76bd9375c9ce84db1c503b22370c954a996987f598e1d87", "onnx_sha256": "d188bf29992a044d234fb113ab8e6d3633d891570b33533c72479cc3b70afec6"},
+  "promotion": {"pairs": 200, "games": 400, "wins": 249, "losses": 151, "paired_score": 0.6225, "one_sided_95_lcb": 0.595, "promotion_qualified": true, "summary_sha256": "561554c045db9bdd97a17631659acf4c9202d588a436257eed5d14e8e776fed9"},
+  "official_ratification": {"champion_id": "champion-3", "registry_sha256": "c4370ecd6c8479bccda864383a69f564870a815a8eef77b43c46e1a79607eda9", "global_champion_2_registry_sha256": "5980a0e77dbf7e8189572275c7a36652bb38a97b6dbbe98f620014bdaccb66be"},
+  "run_final_summary_sha256": "e2cb107464f0b680eef894eaaeb7b4e49c1f45982b8f511e7183b6d5808c53aa",
+  "next_three_generation_run_status": "prepared_and_preflight_qualified_not_started"
+}
