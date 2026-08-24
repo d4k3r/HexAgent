@@ -1,0 +1,9 @@
+{
+  "schema": "teacher-dose-decision-v1",
+  "decision": "CONTROL",
+  "decision_rule": "Gameplay promotion gate decides; validation CE is diagnostic only.",
+  "control_per_epoch_base_rows": {"teacher100": 80000, "deep1600": 0, "historical": 80000, "normal": 180000, "forced": 60000, "total": 400000},
+  "deep5_vs_control": {"candidate": "DEEP5", "games": 400, "wins": 209, "losses": 191, "paired_score": 0.5225, "one_sided_95_lcb": 0.49, "promotion_qualified": false, "summary_sha256": "0bdc0c55c72a1ea686e5b804c96c2803ad3833a69c48c7516b34b6e682cdec65"},
+  "deep10_vs_control": {"candidate": "DEEP10", "games": 400, "wins": 202, "losses": 198, "paired_score": 0.505, "one_sided_95_lcb": 0.4775, "promotion_qualified": false, "summary_sha256": "ad59fae71770e9c413ec33a43b78f41ff35de6dcd7df84c3c78c0e5e37a8179d"},
+  "new_katahex_positions_generated": 0
+}

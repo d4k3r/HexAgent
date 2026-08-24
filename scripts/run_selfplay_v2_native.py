@@ -64,8 +64,8 @@ def read_json(path: Path) -> dict:
 
 def champion_identity(path: Path) -> dict:
     champion = read_json(path)
-    if champion.get("champion_id") != "champion-1":
-        raise RuntimeError("native-v2 generation currently requires frozen champion-1 registry record")
+    if not isinstance(champion.get("champion_id"), str) or not champion["champion_id"].startswith("champion-"):
+        raise RuntimeError("native-v2 generation requires a versioned champion registry record")
     # The immutable registry records the qualified exporter artifact verbatim.
     # Its established field names are `onnx` / `onnx_sha256`, not a second
     # wrapper schema invented by this generator.

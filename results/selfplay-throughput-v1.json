@@ -1,0 +1,11 @@
+{
+  "schema": "selfplay-throughput-qualification-v1",
+  "machine": {"cpu": "AMD Ryzen 7 9800X3D", "gpu": "NVIDIA GeForce RTX 5080"},
+  "workload": {"games": 512, "model_onnx_sha256": "def38b0f0d321f74b38ff113b5e9c630ac69569cffd0f85aaffb740c9a1736c5", "search": {"budget": 128, "c_puct": 2.5, "fpu_mode": "parent_value_reduced", "fpu_reduction": 0.25}},
+  "baseline": {"process_count": 1, "concurrency_per_process": 64, "max_batch": 96, "wait_us": 200, "games_per_second": 1.1759386194771064, "phase_a_rows_per_second": 52.33386207696356, "simulations_per_second": 6698.734345851336, "mean_batch": 36.97619526925013},
+  "qualified": {"process_count": 1, "concurrency_per_process": 128, "max_batch": 96, "wait_us": 200, "games_per_second": 1.7216512602825702, "phase_a_rows_per_second": 76.62693148304534, "simulations_per_second": 9808.247229829803, "mean_batch": 63.53557145636525},
+  "throughput_improvement_percent": 46.41,
+  "semantic_audit": {"baseline_complete": true, "qualified_complete": true, "quarantine": 0, "literal_winner_agreement": true, "qualification_note": "CUDA batch geometry changed some near-tie fingerprints; both independent native-v2 audits passed."},
+  "resource_profile_sha256": "fa156306323cf5301023749cae2f60fb69a68424596ac492ef1fb37eab2850a8",
+  "confirmation_manifest_sha256": "8769dc7942049121142b8f56aac134ad78d01b623e54398a5c13941cc7855dc4"
+}

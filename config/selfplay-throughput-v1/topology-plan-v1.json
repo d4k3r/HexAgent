@@ -1,0 +1,32 @@
+{
+  "schema": "hex-native-selfplay-throughput-plan-v1",
+  "plan_id": "native-selfplay-throughput-stage-a-v1",
+  "champion_registry": "EXTERNAL_ARTIFACT_REQUIRED/champion-2.json",
+  "champion_onnx_sha256": "def38b0f0d321f74b38ff113b5e9c630ac69569cffd0f85aaffb740c9a1736c5",
+  "workload": {
+    "mode": "fixed_normal_native_selfplay_v2",
+    "prefix_mode": "normal",
+    "start_id": 9000000,
+    "games": 256,
+    "master_seed": 2026082402,
+    "equivalence": "Every topology receives the exact same game-ID set and deterministic game seeds. Multi-process topologies partition contiguous IDs without overlap."
+  },
+  "search": {
+    "budget": 128,
+    "c_puct": 2.5,
+    "fpu_mode": "parent_value_reduced",
+    "fpu_reduction": 0.25,
+    "bridge_controller": "active elementary certificate/realizer",
+    "literal_winner": "physical terminal authority",
+    "watchdog_seconds": 120
+  },
+  "configs": [
+    {"benchmark_id": "topology-a-1x64-b96-w200", "process_count": 1, "concurrency_per_process": 64, "max_batch": 96, "wait_us": 200},
+    {"benchmark_id": "topology-b-1x128-b96-w200", "process_count": 1, "concurrency_per_process": 128, "max_batch": 96, "wait_us": 200},
+    {"benchmark_id": "topology-c-2x32-b96-w200", "process_count": 2, "concurrency_per_process": 32, "max_batch": 96, "wait_us": 200},
+    {"benchmark_id": "topology-d-2x64-b96-w200", "process_count": 2, "concurrency_per_process": 64, "max_batch": 96, "wait_us": 200},
+    {"benchmark_id": "topology-e-3x48-b96-w200", "process_count": 3, "concurrency_per_process": 48, "max_batch": 96, "wait_us": 200},
+    {"benchmark_id": "topology-f-3x64-b96-w200", "process_count": 3, "concurrency_per_process": 64, "max_batch": 96, "wait_us": 200}
+  ],
+  "selection_rule": "Rank only audit-complete, zero-quarantine configurations by useful whole-workload games/sec. Treat a trivial gain as a complexity trade-off; confirm the selected candidate on a larger fixed workload against 1x64/b96/w200 before changing any production resource profile."
+}

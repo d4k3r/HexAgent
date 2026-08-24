@@ -1,0 +1,28 @@
+{
+  "schema": "hex-native-selfplay-resource-profile-v1",
+  "profile_id": "selfplay-resource-profile-v1",
+  "approval_status": "APPROVED_FOR_AUTONOMOUS_SELFPLAY",
+  "approved_for": "autonomous-generation-v1",
+  "machine_identity": {
+    "cpu": "AMD Ryzen 7 9800X3D",
+    "gpu": "NVIDIA GeForce RTX 5080"
+  },
+  "resource": {
+    "process_count": 1,
+    "concurrency_per_process": 128,
+    "max_batch": 96,
+    "wait_us": 200
+  },
+  "search_identity": {
+    "budget": 128,
+    "c_puct": 2.5,
+    "fpu_mode": "parent_value_reduced",
+    "fpu_reduction": 0.25
+  },
+  "watchdog_seconds": 120,
+  "evidence_source": {
+    "path": "reconstruction/artifacts/selfplay-throughput-v1/selfplay-resource-profile-v1.json",
+    "sha256": "909718c686d2840c90977c7d18e39e6ba7647389cdb838344df02ae5570cb23d"
+  },
+  "qualification": "SELFPLAY-THROUGHPUT-V1-QUALIFIED; 512-game confirmation passed semantic audit; 46.41 percent improvement over 1-process concurrency-64 baseline"
+}

@@ -84,11 +84,28 @@ def audit_and_load_sources(sources:dict[str,Path], split:dict[str,str], mode:str
     counts['fields']=sorted(counts['fields']);counts['selected_rows']=len(examples);return examples,counts
 
 class ExampleDataset(Dataset):
-    def __init__(self,examples:list[TrainingExample]): self.examples=examples
-    def __len__(self): return len(self.examples)
+    """Examples optionally paired with their exact colour-transpose symmetry.
+
+    The transformed half is constructed through ``transform_example``: its
+    connection planes come from a freshly rebuilt authoritative HexBoard/DSU.
+    """
+    def __init__(self,examples:list[TrainingExample], *, symmetry_augment:bool=False):
+        self.examples=examples; self.symmetry_augment=bool(symmetry_augment)
+    def __len__(self): return len(self.examples)*(2 if self.symmetry_augment else 1)
     def __getitem__(self,i):
-        x=self.examples[i]; pi=x.policy.pi or [0.0]*AREA
-        return {"state":torch.tensor(x.state.planes,dtype=torch.float32).reshape(6,BOARD,BOARD),"pi":torch.tensor(pi,dtype=torch.float32),"policy_weight":torch.tensor(x.policy.weight,dtype=torch.float32),"z":torch.tensor(x.value.z,dtype=torch.float32),"value_weight":torch.tensor(x.value.weight,dtype=torch.float32),"game_id":x.game_id}
+        if not 0 <= i < len(self): raise IndexError(i)
+        transformed=self.symmetry_augment and i>=len(self.examples)
+        x=self.examples[i-len(self.examples)] if transformed else self.examples[i]
+        if transformed:
+            from .symmetry import transformed_training_tensors
+            state,pi,legal,z=transformed_training_tensors(x)
+        else:
+            state=x.state.planes; pi=x.policy.pi or [0.0]*AREA; legal=x.policy.legal_mask; z=x.value.z
+        return {"state":torch.tensor(state,dtype=torch.float32).reshape(6,BOARD,BOARD),"pi":torch.tensor(pi,dtype=torch.float32),"legal_mask":torch.tensor(legal,dtype=torch.bool),"policy_weight":torch.tensor(x.policy.weight,dtype=torch.float32),"z":torch.tensor(z,dtype=torch.float32),"value_weight":torch.tensor(x.value.weight,dtype=torch.float32),"game_id":x.game_id,"symmetry_transformed":torch.tensor(transformed)}
 
 def architecture_manifest(model:nn.Module, *,channels:int,blocks:int)->dict:
     count=sum(p.numel() for p in model.parameters()); return {"architecture":"group49-final-residual-policy-value","input_shape":[6,11,11],"policy_logits":121,"value":"tanh scalar","channels":channels,"residual_blocks":blocks,"parameters":count,"trainable_parameters":sum(p.numel() for p in model.parameters() if p.requires_grad)}
+
+def deterministic_milestone_checkpoint_spec() -> dict:
+    """Fixed reporting milestone; it does not alter selection or optimization."""
+    return {"epoch":12,"filename":"epoch-12.pt","written_when_run_reaches_epoch":12}
